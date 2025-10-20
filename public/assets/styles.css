@@ -438,7 +438,13 @@ p {
 
 .resouce-items {
     grid-column-gap: 64px;
-    /*grid-row-gap: 64px;*/
+    grid-row-gap: 64px;
+    flex-direction: column;
+    display: flex;
+}
+
+.competition-resouce-items {
+    grid-column-gap: 64px;
     flex-direction: column;
     display: flex;
 }
