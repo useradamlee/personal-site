@@ -1,5 +1,5 @@
 ---
-const { title, issuer, date, placement, pdfUrl } = Astro.props;
+const { title, issuer, date, placement, pdfUrl, courseUrl } = Astro.props;
 ---
 
 <div class="project-container">
@@ -12,19 +12,55 @@ const { title, issuer, date, placement, pdfUrl } = Astro.props;
                 {placement && <span class="placement">{placement}</span>}
             </div>
         </div>
-        <a
-            href={pdfUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="view-certificate-btn"
-        >
-            <img
-                src="/assets/file-text.svg"
-                alt="View Certificate"
-                class="cert-icon"
-            />
-            <span>View Certificate</span>
-        </a>
+        <div class="cert-actions">
+            {
+                courseUrl && (
+                    <a
+                        href={courseUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="info-btn"
+                        title="Course/Competition Details"
+                    >
+                        <svg
+                            width="18"
+                            height="18"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                        >
+                            <circle cx="12" cy="12" r="10" />
+                            <line x1="12" y1="16" x2="12" y2="12" />
+                            <line x1="12" y1="8" x2="12.01" y2="8" />
+                        </svg>
+                        <span>Details</span>
+                    </a>
+                )
+            }
+            <a
+                href={pdfUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="view-certificate-btn"
+                title="View Certificate"
+            >
+                <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                >
+                    <path
+                        d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+                    ></path>
+                    <polyline points="14 2 14 8 20 8"></polyline>
+                </svg>
+                <span>View Certificate</span>
+            </a>
+        </div>
     </div>
 </div>
 
@@ -75,28 +111,46 @@ const { title, issuer, date, placement, pdfUrl } = Astro.props;
         font-weight: 600;
     }
 
+    .cert-actions {
+        display: flex;
+        gap: 0.5rem;
+        align-items: center;
+    }
+
+    .info-btn,
     .view-certificate-btn {
         display: flex;
         align-items: center;
         gap: 0.5rem;
         padding: 0.75rem 1.25rem;
-        background: rgba(74, 158, 255, 0.1);
-        border: 1px solid #4a9eff;
         border-radius: 6px;
-        color: #4a9eff;
         text-decoration: none;
         transition: all 0.3s ease;
         white-space: nowrap;
+        border: 1px solid;
+    }
+
+    .info-btn {
+        background: rgba(139, 92, 246, 0.1);
+        border-color: rgba(139, 92, 246, 0.3);
+        color: #a78bfa;
+    }
+
+    .info-btn:hover {
+        background: rgba(139, 92, 246, 0.2);
+        border-color: #a78bfa;
+        transform: translateY(-2px);
+    }
+
+    .view-certificate-btn {
+        background: rgba(74, 158, 255, 0.1);
+        border-color: #4a9eff;
+        color: #4a9eff;
     }
 
     .view-certificate-btn:hover {
         background: rgba(74, 158, 255, 0.2);
         transform: translateY(-2px);
-    }
-
-    .cert-icon {
-        width: 18px;
-        height: 18px;
     }
 
     @media (max-width: 768px) {
@@ -105,6 +159,12 @@ const { title, issuer, date, placement, pdfUrl } = Astro.props;
             align-items: flex-start;
         }
 
+        .cert-actions {
+            width: 100%;
+            flex-direction: column;
+        }
+
+        .info-btn,
         .view-certificate-btn {
             width: 100%;
             justify-content: center;

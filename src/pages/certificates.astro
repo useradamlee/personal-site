@@ -8,18 +8,21 @@ const courseCertificates = {
     "boot.dev": [
         {
             title: "Learn Python",
-            date: "2025-05",
-            pdfUrl: "https://www.boot.dev/certificates/34963cd5-23fd-4f58-b24e-db329cfdb237",
+            date: "2024-10",
+            pdfUrl: "/certificates/courses/bootdev-python.pdf",
+            courseUrl: "https://www.boot.dev/courses/learn-python",
         },
         {
             title: "Learn Go",
             date: "2024-09",
             pdfUrl: "/certificates/courses/bootdev-go.pdf",
+            courseUrl: "https://www.boot.dev/courses/learn-go",
         },
         {
             title: "Learn JavaScript",
-            date: "2025-05",
+            date: "2024-08",
             pdfUrl: "/certificates/courses/bootdev-javascript.pdf",
+            courseUrl: "https://www.boot.dev/courses/learn-javascript",
         },
         // Add all your boot.dev certificates here
     ],
@@ -28,6 +31,8 @@ const courseCertificates = {
             title: "Solutions Architect Associate",
             date: "2024-06",
             pdfUrl: "/certificates/courses/aws-solutions-architect.pdf",
+            courseUrl:
+                "https://aws.amazon.com/certification/certified-solutions-architect-associate/",
         },
     ],
     "Other Courses": [
@@ -36,6 +41,7 @@ const courseCertificates = {
             issuer: "CNCF",
             date: "2023-12",
             pdfUrl: "/certificates/courses/cka-certificate.pdf",
+            courseUrl: "https://www.cncf.io/certification/cka/",
         },
     ],
 };
@@ -47,6 +53,7 @@ const competitionCertificates = [
         date: "2024-03",
         placement: "Top 10%",
         pdfUrl: "/certificates/competitions/ncl-spring-2024.pdf",
+        courseUrl: "https://nationalcyberleague.org/",
     },
     // Add more competition certificates here
 ];
@@ -103,6 +110,7 @@ const competitionCertificates = [
                                             date={cert.date}
                                             placement={cert.placement}
                                             pdfUrl={cert.pdfUrl}
+                                            courseUrl={cert.courseUrl}
                                         />
                                     ))
                                 }
