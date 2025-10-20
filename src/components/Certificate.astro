@@ -1,0 +1,113 @@
+---
+const { title, issuer, date, placement, pdfUrl } = Astro.props;
+---
+
+<div class="project-container">
+    <div class="project-content">
+        <div class="project-title-container">
+            <h3>{title}</h3>
+            <div class="certificate-meta">
+                <span class="issuer">{issuer}</span>
+                <span class="date">{date}</span>
+                {placement && <span class="placement">{placement}</span>}
+            </div>
+        </div>
+        <a
+            href={pdfUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="view-certificate-btn"
+        >
+            <img
+                src="/assets/file-text.svg"
+                alt="View Certificate"
+                class="cert-icon"
+            />
+            <span>View Certificate</span>
+        </a>
+    </div>
+</div>
+
+<style>
+    .project-container {
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 8px;
+        padding: 1.5rem;
+        margin-bottom: 1rem;
+        transition: all 0.3s ease;
+    }
+
+    .project-container:hover {
+        border-color: rgba(255, 255, 255, 0.3);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .project-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .project-title-container {
+        flex: 1;
+    }
+
+    h3 {
+        margin: 0 0 0.5rem 0;
+        font-size: 1.25rem;
+    }
+
+    .certificate-meta {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        font-size: 0.875rem;
+        color: #888;
+    }
+
+    .issuer {
+        color: #aaa;
+    }
+
+    .placement {
+        color: #4a9eff;
+        font-weight: 600;
+    }
+
+    .view-certificate-btn {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.75rem 1.25rem;
+        background: rgba(74, 158, 255, 0.1);
+        border: 1px solid #4a9eff;
+        border-radius: 6px;
+        color: #4a9eff;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        white-space: nowrap;
+    }
+
+    .view-certificate-btn:hover {
+        background: rgba(74, 158, 255, 0.2);
+        transform: translateY(-2px);
+    }
+
+    .cert-icon {
+        width: 18px;
+        height: 18px;
+    }
+
+    @media (max-width: 768px) {
+        .project-content {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .view-certificate-btn {
+            width: 100%;
+            justify-content: center;
+        }
+    }
+</style>
