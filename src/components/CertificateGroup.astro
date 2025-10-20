@@ -1,11 +1,18 @@
 ---
-const { provider, certificates } = Astro.props;
+const { provider, certificates, icon } = Astro.props;
 const groupId = provider.toLowerCase().replace(/\s+/g, "-");
 ---
 
 <details class="certificate-group" open={provider === "boot.dev"}>
     <summary class="group-header">
         <div class="group-title-container">
+            {
+                icon && (
+                    <div class="provider-icon">
+                        <img src={icon} alt={provider} />
+                    </div>
+                )
+            }
             <h3 class="provider-name">{provider}</h3>
             <span class="cert-count"
                 >{certificates.length} certificate{
@@ -125,6 +132,24 @@ const groupId = provider.toLowerCase().replace(/\s+/g, "-");
         display: flex;
         align-items: center;
         gap: 1rem;
+    }
+
+    .provider-icon {
+        flex-shrink: 0;
+        width: 32px;
+        height: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 6px;
+        padding: 0.35rem;
+    }
+
+    .provider-icon img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
     }
 
     .provider-name {
@@ -255,9 +280,7 @@ const groupId = provider.toLowerCase().replace(/\s+/g, "-");
         }
 
         .group-title-container {
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 0.5rem;
+            flex-wrap: wrap;
         }
     }
 </style>

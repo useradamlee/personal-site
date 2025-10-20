@@ -5,45 +5,54 @@ import Certificate from "../components/Certificate.astro";
 import Sidebar from "../components/Sidebar.astro";
 
 const courseCertificates = {
-    "boot.dev": [
-        {
-            title: "Learn Python",
-            date: "2024-10",
-            pdfUrl: "/certificates/courses/bootdev-python.pdf",
-            courseUrl: "https://www.boot.dev/courses/learn-python",
-        },
-        {
-            title: "Learn Go",
-            date: "2024-09",
-            pdfUrl: "/certificates/courses/bootdev-go.pdf",
-            courseUrl: "https://www.boot.dev/courses/learn-go",
-        },
-        {
-            title: "Learn JavaScript",
-            date: "2024-08",
-            pdfUrl: "/certificates/courses/bootdev-javascript.pdf",
-            courseUrl: "https://www.boot.dev/courses/learn-javascript",
-        },
-        // Add all your boot.dev certificates here
-    ],
-    AWS: [
-        {
-            title: "Solutions Architect Associate",
-            date: "2024-06",
-            pdfUrl: "/certificates/courses/aws-solutions-architect.pdf",
-            courseUrl:
-                "https://aws.amazon.com/certification/certified-solutions-architect-associate/",
-        },
-    ],
-    "Other Courses": [
-        {
-            title: "Kubernetes Administrator (CKA)",
-            issuer: "CNCF",
-            date: "2023-12",
-            pdfUrl: "/certificates/courses/cka-certificate.pdf",
-            courseUrl: "https://www.cncf.io/certification/cka/",
-        },
-    ],
+    "boot.dev": {
+        icon: "/assets/icons/bootdev.png",
+        certificates: [
+            {
+                title: "Learn Python",
+                date: "2024-10",
+                pdfUrl: "/certificates/courses/bootdev-python.pdf",
+                courseUrl: "https://www.boot.dev/courses/learn-python",
+            },
+            {
+                title: "Learn Go",
+                date: "2024-09",
+                pdfUrl: "/certificates/courses/bootdev-go.pdf",
+                courseUrl: "https://www.boot.dev/courses/learn-go",
+            },
+            {
+                title: "Learn JavaScript",
+                date: "2024-08",
+                pdfUrl: "/certificates/courses/bootdev-javascript.pdf",
+                courseUrl: "https://www.boot.dev/courses/learn-javascript",
+            },
+            // Add all your boot.dev certificates here
+        ],
+    },
+    AWS: {
+        icon: "/assets/icons/aws.svg",
+        certificates: [
+            {
+                title: "Solutions Architect Associate",
+                date: "2024-06",
+                pdfUrl: "/certificates/courses/aws-solutions-architect.pdf",
+                courseUrl:
+                    "https://aws.amazon.com/certification/certified-solutions-architect-associate/",
+            },
+        ],
+    },
+    "Other Courses": {
+        icon: "/assets/icons/courses.svg",
+        certificates: [
+            {
+                title: "Kubernetes Administrator (CKA)",
+                issuer: "CNCF",
+                date: "2023-12",
+                pdfUrl: "/certificates/courses/cka-certificate.pdf",
+                courseUrl: "https://www.cncf.io/certification/cka/",
+            },
+        ],
+    },
 };
 
 const competitionCertificates = [
@@ -87,10 +96,11 @@ const competitionCertificates = [
                             <div class="certificate-groups">
                                 {
                                     Object.entries(courseCertificates).map(
-                                        ([provider, certs]) => (
+                                        ([provider, data]) => (
                                             <CertificateGroup
                                                 provider={provider}
-                                                certificates={certs}
+                                                certificates={data.certificates}
+                                                icon={data.icon}
                                             />
                                         ),
                                     )
