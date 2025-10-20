@@ -3,7 +3,7 @@ const { provider, certificates, icon } = Astro.props;
 const groupId = provider.toLowerCase().replace(/\s+/g, "-");
 ---
 
-<details class="certificate-group" open={provider === "boot.dev"}>
+<details class="certificate-group">
     <summary class="group-header">
         <div class="group-title-container">
             {
