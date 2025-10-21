@@ -1,6 +1,112 @@
 ---
 import Header from "../components/Header.astro";
 import Sidebar from "../components/Sidebar.astro";
+import Timeline from "../components/Timeline.astro";
+
+const timelineItems = [
+    {
+        date: "Oct 2025",
+        category: "course",
+        title: "Started Advanced Backend Development (boot.dev)",
+        description:
+            "Enrolled in comprehensive backend engineering track covering Go, system design, and distributed systems.",
+        tags: ["Go", "Backend", "Learning"],
+        // No detailUrl - quick reference only
+    },
+    {
+        date: "Aug 2025",
+        category: "trip",
+        title: "Japan STEM Innovation Trip",
+        description:
+            "Week-long immersive experience exploring robotics labs, tech startups, and innovation centers in Tokyo and Osaka.",
+        highlights: [
+            "Visited Sony AI Research Lab",
+            "Attended workshop at TeamLab Borderless",
+            "Collaborated with local students on IoT project",
+        ],
+        tags: ["Japan", "Robotics", "Innovation"],
+        detailUrl: "/timeline/japan-stem-trip",
+    },
+    {
+        date: "Mar 2025",
+        category: "competition",
+        title: "National Cyber League - Spring 2025",
+        description:
+            "Competed in comprehensive cybersecurity challenges, achieving Top 10% nationally.",
+        highlights: [
+            "Ranked Top 10% out of 5,000+ participants",
+            "Specialized in cryptography and web exploitation",
+            "Solved 45+ security challenges",
+        ],
+        tags: ["Cybersecurity", "Top 10%", "NCL"],
+        detailUrl: "/timeline/ncl-spring-2025",
+    },
+    {
+        date: "Jan 2025",
+        category: "achievement",
+        title: "AWS Solutions Architect Certification",
+        description:
+            "Earned AWS Certified Solutions Architect - Associate certification, demonstrating cloud architecture proficiency.",
+        tags: ["AWS", "Cloud", "Certification"],
+    },
+    {
+        date: "Nov 2024",
+        category: "project",
+        title: "Built Microservices Platform for School Management",
+        description:
+            "Led development of a distributed system for school event management using Kubernetes and Docker.",
+        highlights: [
+            "Deployed on 3-node Kubernetes cluster",
+            "Served 500+ concurrent users",
+            "Implemented CI/CD with GitLab",
+        ],
+        tags: ["Kubernetes", "Microservices", "Leadership"],
+        detailUrl: "/timeline/school-management-platform",
+    },
+    {
+        date: "Sep 2024",
+        category: "activity",
+        title: "Founded School DevOps Club",
+        description:
+            "Started a club to teach students about DevOps practices, cloud computing, and infrastructure automation.",
+        highlights: [
+            "30+ active members",
+            "Weekly workshops on Docker, K8s, CI/CD",
+            "Organized cloud computing hackathon",
+        ],
+        tags: ["Leadership", "Teaching", "DevOps"],
+    },
+    {
+        date: "Jun 2024",
+        category: "trip",
+        title: "Google Singapore Office Visit",
+        description:
+            "Selected for exclusive tour of Google Singapore, attended talks on SRE practices and cloud infrastructure.",
+        tags: ["Google", "SRE", "Networking"],
+        detailUrl: "/timeline/google-singapore-visit",
+    },
+    {
+        date: "Feb 2024",
+        category: "competition",
+        title: "AWS GameDay Competition",
+        description:
+            "Participated in AWS GameDay, troubleshooting and optimizing cloud infrastructure under time pressure.",
+        highlights: [
+            "Team placed 3rd out of 20 teams",
+            "Optimized costs by 40%",
+            "Improved system resilience",
+        ],
+        tags: ["AWS", "Competition", "Team"],
+    },
+    {
+        date: "2024 - Present",
+        category: "activity",
+        title: "Computer Science at SST",
+        description:
+            "Pursuing Computer Science specialization, focusing on software engineering and cloud computing.",
+        tags: ["SST", "CS", "Singapore"],
+    },
+];
 ---
 
 <!doctype html>
@@ -24,12 +130,11 @@ import Sidebar from "../components/Sidebar.astro";
                                 problem-solving, and aiding teammates in
                                 achieving quicker outcomes.
                             </p>
-                            <!-- </div>
-                        <a
-                            href="mailto:sam@overview.co.il	"
-                            class="button w-button">Contact</a
-                        > -->
                         </div>
+
+                        <!-- Timeline Section -->
+                        <Timeline items={timelineItems} />
+
                         <div class="projects-section">
                             <!-- Software Development -->
                             <a

@@ -1,0 +1,249 @@
+---
+import Header from "../components/Header.astro";
+import Sidebar from "../components/Sidebar.astro";
+
+const { frontmatter } = Astro.props;
+const { title, date, category, description, tags, images } = frontmatter;
+---
+
+<!doctype html>
+<html>
+    <Header title={`${title} | Adam Lee`} />
+    <body>
+        <div class="content">
+            <Sidebar selectedItem="home" />
+            <nav class="main">
+                <div class="container">
+                    <div class="back-nav-container">
+                        <a href="/" class="back-nav-button w-inline-block">
+                            <img
+                                src="/assets/back.svg"
+                                loading="lazy"
+                                alt=""
+                                class="back-nav-img"
+                            />
+                            <div>Back to Home</div>
+                        </a>
+                    </div>
+                    <div class="content-container">
+                        <div class="detail-header">
+                            <div class="detail-meta">
+                                <span class="detail-category">{category}</span>
+                                <span class="detail-date">{date}</span>
+                            </div>
+                            <h1 class="detail-title">{title}</h1>
+                            <p class="detail-description">{description}</p>
+                            {
+                                tags && (
+                                    <div class="detail-tags">
+                                        {tags.map((tag: string) => (
+                                            <span class="detail-tag">
+                                                {tag}
+                                            </span>
+                                        ))}
+                                    </div>
+                                )
+                            }
+                        </div>
+
+                        {
+                            images && images.length > 0 && (
+                                <div class="detail-images">
+                                    {images.map((img: any) => (
+                                        <img
+                                            src={img.src}
+                                            alt={img.alt}
+                                            class="detail-image"
+                                        />
+                                    ))}
+                                </div>
+                            )
+                        }
+
+                        <div class="detail-content">
+                            <slot />
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </body>
+</html>
+
+<style>
+    .detail-header {
+        margin-bottom: 2rem;
+    }
+
+    .detail-meta {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        margin-bottom: 1rem;
+    }
+
+    .detail-category {
+        padding: 0.35rem 0.85rem;
+        background: rgba(74, 158, 255, 0.15);
+        color: #4a9eff;
+        border-radius: 12px;
+        font-size: 0.85rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .detail-date {
+        color: #888;
+        font-size: 0.95rem;
+    }
+
+    .detail-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #ffffff;
+        margin: 0 0 1rem 0;
+        line-height: 1.2;
+    }
+
+    .detail-description {
+        font-size: 1.15rem;
+        color: #aaa;
+        line-height: 1.6;
+        margin: 0 0 1rem 0;
+    }
+
+    .detail-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+
+    .detail-tag {
+        padding: 0.35rem 0.85rem;
+        background: rgba(139, 92, 246, 0.15);
+        color: #a78bfa;
+        border-radius: 12px;
+        font-size: 0.85rem;
+        font-weight: 500;
+    }
+
+    .detail-images {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .detail-image {
+        width: 100%;
+        border-radius: 8px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .detail-content {
+        font-size: 1rem;
+        line-height: 1.8;
+        color: #ccc;
+    }
+
+    .detail-content :global(h2) {
+        font-size: 1.75rem;
+        font-weight: 600;
+        color: #ffffff;
+        margin: 2rem 0 1rem 0;
+    }
+
+    .detail-content :global(h3) {
+        font-size: 1.35rem;
+        font-weight: 600;
+        color: #ffffff;
+        margin: 1.5rem 0 0.75rem 0;
+    }
+
+    .detail-content :global(p) {
+        margin-bottom: 1rem;
+    }
+
+    .detail-content :global(ul),
+    .detail-content :global(ol) {
+        margin: 1rem 0;
+        padding-left: 1.5rem;
+    }
+
+    .detail-content :global(li) {
+        margin-bottom: 0.5rem;
+    }
+
+    .detail-content :global(strong) {
+        color: #fff;
+        font-weight: 600;
+    }
+
+    .detail-content :global(em) {
+        color: #ddd;
+    }
+
+    .detail-content :global(a) {
+        color: #4a9eff;
+        text-decoration: none;
+        border-bottom: 1px solid rgba(74, 158, 255, 0.3);
+        transition: border-color 0.2s ease;
+    }
+
+    .detail-content :global(a:hover) {
+        border-bottom-color: #4a9eff;
+    }
+
+    .detail-content :global(blockquote) {
+        border-left: 3px solid #4a9eff;
+        padding-left: 1.5rem;
+        margin: 1.5rem 0;
+        font-style: italic;
+        color: #aaa;
+    }
+
+    .detail-content :global(code) {
+        background: rgba(255, 255, 255, 0.05);
+        padding: 0.2rem 0.4rem;
+        border-radius: 4px;
+        font-size: 0.9em;
+        color: #4a9eff;
+    }
+
+    .detail-content :global(pre) {
+        background: rgba(255, 255, 255, 0.05);
+        padding: 1rem;
+        border-radius: 8px;
+        overflow-x: auto;
+        margin: 1rem 0;
+    }
+
+    .detail-content :global(pre code) {
+        background: none;
+        padding: 0;
+    }
+
+    .detail-content :global(img) {
+        max-width: 100%;
+        border-radius: 8px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        margin: 1.5rem 0;
+    }
+
+    .detail-content :global(hr) {
+        border: none;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        margin: 2rem 0;
+    }
+
+    @media (max-width: 768px) {
+        .detail-title {
+            font-size: 2rem;
+        }
+
+        .detail-images {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
