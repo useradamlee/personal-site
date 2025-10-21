@@ -3,6 +3,7 @@ import Header from "../components/Header.astro";
 import CertificateGroup from "../components/CertificateGroup.astro";
 import Certificate from "../components/Certificate.astro";
 import Sidebar from "../components/Sidebar.astro";
+import { undefined } from "astro:schema";
 
 const courseCertificates = {
     "boot.dev": {
@@ -10,67 +11,144 @@ const courseCertificates = {
         certificates: [
             {
                 title: "Learn Python",
-                date: "2025-10",
+                date: "2025-05",
                 pdfUrl: "https://www.boot.dev/certificates/34963cd5-23fd-4f58-b24e-db329cfdb237",
                 courseUrl: "https://www.boot.dev/courses/learn-python",
             },
             {
-                title: "Learn Go",
-                date: "2024-09",
-                pdfUrl: "/certificates/courses/bootdev-go.pdf",
-                courseUrl: "https://www.boot.dev/courses/learn-go",
+                title: "Learn Linux",
+                date: "2025-05",
+                pdfUrl: "https://www.boot.dev/certificates/9c9996a1-774d-40c0-ac60-88dbc295e132",
+                courseUrl: "https://www.boot.dev/courses/learn-linux",
+            },
+            {
+                title: "Learn Git",
+                date: "2025-05",
+                pdfUrl: "https://www.boot.dev/certificates/e15bb777-9a16-472b-b98e-56557018f36f",
+                courseUrl: "https://www.boot.dev/courses/learn-git",
+            },
+            {
+                title: "Learn Object Oriented Programming in Python",
+                date: "2025-05",
+                pdfUrl: "https://www.boot.dev/certificates/da044d83-6ce9-40ef-a3b4-ac432b876c53",
+                courseUrl:
+                    "https://www.boot.dev/courses/learn-object-oriented-programming-python",
+            },
+            {
+                title: "Learn Functional Programming in Python",
+                date: "2025-06",
+                pdfUrl: "https://www.boot.dev/certificates/40a145ac-36ea-49a8-927c-65b2029432f5",
+                courseUrl:
+                    "https://www.boot.dev/courses/learn-functional-programming-python",
+            },
+            {
+                title: "Learn Data Structures and Algorithms in Python",
+                date: "2025-08",
+                pdfUrl: "https://www.boot.dev/certificates/743032e6-4a7e-4a6b-9bea-c7226ba4c2f6",
+                courseUrl:
+                    "https://www.boot.dev/courses/learn-data-structures-and-algorithms-python",
+            },
+            {
+                title: "Learn Memory Management in C",
+                date: "2025-09",
+                pdfUrl: "https://www.boot.dev/certificates/62b31da5-d9ed-449b-bb5e-d13a3c70cf27",
+                courseUrl:
+                    "https://www.boot.dev/courses/learn-memory-management-c",
             },
             {
                 title: "Learn JavaScript",
-                date: "2024-08",
-                pdfUrl: "/certificates/courses/bootdev-javascript.pdf",
+                date: "2024-10",
+                pdfUrl: "https://www.boot.dev/certificates/1b9c6f19-0a9a-47b0-9008-6ee2aad898ea",
                 courseUrl: "https://www.boot.dev/courses/learn-javascript",
             },
             // Add all your boot.dev certificates here
         ],
     },
-    AWS: {
-        icon: "/assets/icons/aws.svg",
+    // AWS: {
+    //     icon: false,
+    //     certificates: [
+    //         {
+    //             title: "Solutions Architect Associate",
+    //             date: "2024-06",
+    //             pdfUrl: "/certificates/courses/aws-solutions-architect.pdf",
+    //             courseUrl:
+    //                 "https://aws.amazon.com/certification/certified-solutions-architect-associate/",
+    //         },
+    //     ],
+    // },
+    Apple: {
+        icon: false,
         certificates: [
             {
-                title: "Solutions Architect Associate",
-                date: "2024-06",
-                pdfUrl: "/certificates/courses/aws-solutions-architect.pdf",
+                title: "Apple Teacher",
+                date: "2024-05",
+                pdfUrl: "/assets/certificates/courses/AppleTeacherCertificate.pdf",
                 courseUrl:
-                    "https://aws.amazon.com/certification/certified-solutions-architect-associate/",
+                    "https://education.apple.com/learning-center/T006360A-en_US",
             },
         ],
     },
-    "Other Courses": {
-        icon: "/assets/icons/courses.svg",
+    "Cisco Networking Academy": {
+        icon: false,
         certificates: [
             {
-                title: "Kubernetes Administrator (CKA)",
-                issuer: "CNCF",
-                date: "2023-12",
-                pdfUrl: "/certificates/courses/cka-certificate.pdf",
-                courseUrl: "https://www.cncf.io/certification/cka/",
+                title: "Introduction to Cybersecurity",
+                date: "2024-01",
+                pdfUrl: "https://www.credly.com/badges/2561f323-df19-46da-a437-ea7699ffc33b",
+                courseUrl:
+                    "https://www.netacad.com/courses/introduction-to-cybersecurity",
             },
         ],
     },
+    Google: {
+        icon: false,
+        certificates: [
+            {
+                title: "Applied Digital Skills",
+                date: "2023-03",
+                pdfUrl: "/assets/certificates/courses/GoogleAppliedDigitalSkillsCertificates.pdf",
+                courseUrl: "https://grow.google/applied-digital-skills/",
+            },
+        ],
+    },
+    // "Other Courses": {
+    //     icon: false,
+    //     certificates: [
+    //         {
+    //             title: "Kubernetes Administrator (CKA)",
+    //             issuer: "CNCF",
+    //             date: "2023-12",
+    //             pdfUrl: "/certificates/courses/cka-certificate.pdf",
+    //             courseUrl: "https://www.cncf.io/certification/cka/",
+    //         },
+    //     ],
+    // },
 };
 
 const competitionCertificates = [
-    {
-        title: "National Cyber League - Spring 2024",
-        issuer: "NCL",
-        date: "2024-03",
-        placement: "Top 10%",
-        pdfUrl: "/certificates/competitions/ncl-spring-2024.pdf",
-        courseUrl: "https://nationalcyberleague.org/",
-    },
+    // {
+    //     title: "National Cyber League - Spring 2024",
+    //     issuer: "NCL",
+    //     date: "2024-03",
+    //     placement: "Top 10%",
+    //     pdfUrl: "/certificates/competitions/ncl-spring-2024.pdf",
+    //     courseUrl: "https://nationalcyberleague.org/",
+    // },
     {
         title: "Astrigue 2024",
         issuer: "RI",
         date: "2024-03",
-        placement: "",
-        pdfUrl: "/certificates/competitions/ncl-spring-2024.pdf",
-        courseUrl: "https://nationalcyberleague.org/",
+        placement: "Participation",
+        pdfUrl: "assets/certificates/competitions/Astrigue_2024_cert.pdf",
+        courseUrl: "https://sstastro.blogspot.com/p/astrigue-2024.html",
+    },
+    {
+        title: "NIE Mathematics Challenge 2024",
+        issuer: "NIE",
+        date: "2024",
+        placement: "Participation with Distinction",
+        pdfUrl: "/assets/certificates/competitions/NIE_cert_2024.pdf",
+        courseUrl: "https://math.nie.edu.sg/information/nmcss.aspx",
     },
     // Add more competition certificates here
 ];
@@ -100,7 +178,7 @@ const competitionCertificates = [
 
                         <!-- Course Certificates Section -->
                         <section class="items-container">
-                            <h2 class="section-title">Course Certifications</h2>
+                            <h2 class="section-title">Courses</h2>
                             <div class="certificate-groups">
                                 {
                                     Object.entries(courseCertificates).map(
@@ -118,7 +196,7 @@ const competitionCertificates = [
 
                         <!-- Competition Certificates Section -->
                         <section class="items-container">
-                            <h2 class="section-title">Competition Awards</h2>
+                            <h2 class="section-title">Competitions</h2>
                             <div class="competition-resouce-items">
                                 {
                                     competitionCertificates.map((cert) => (
