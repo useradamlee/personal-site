@@ -15,7 +15,11 @@ const { title, date, category, description, tags, images } = frontmatter;
             <nav class="main">
                 <div class="container">
                     <div class="back-nav-container">
-                        <a href="/" class="back-nav-button w-inline-block">
+                        <a
+                            href="/"
+                            class="back-nav-button w-inline-block"
+                            id="back-to-home"
+                        >
                             <img
                                 src="/assets/back.svg"
                                 loading="lazy"
@@ -69,6 +73,20 @@ const { title, date, category, description, tags, images } = frontmatter;
         </div>
     </body>
 </html>
+
+<script>
+    // No special handling needed - the Timeline component handles scroll restoration
+    // This script just ensures smooth navigation
+    const backButton = document.getElementById("back-to-home");
+
+    if (backButton) {
+        // Prevent default to use History API for better control
+        backButton.addEventListener("click", (e) => {
+            // Let the default navigation happen
+            // The scroll will be restored by the Timeline component's pageshow handler
+        });
+    }
+</script>
 
 <style>
     .detail-header {
