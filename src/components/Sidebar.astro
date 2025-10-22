@@ -14,15 +14,15 @@ const { selectedItem } = Astro.props;
     <div class="nav-content">
         <a href="/" class="w-nav-brand" aria-label="home">
             <div class="niv-data">
-                <!-- <img
+                <img
                     src="/assets/sam.jpg"
                     loading="eager"
                     alt="Profile picture"
                     class="niv-image"
-                /> -->
+                />
                 <div>
                     <div class="label-white">Adam Lee</div>
-                    <div class="label-gray">Software Engineer</div>
+                    <div class="label-gray">Engineering+ @ SST</div>
                 </div>
             </div>
         </a>
@@ -57,7 +57,7 @@ const { selectedItem } = Astro.props;
                     alt=""
                     class="nav-link-image"
                 />
-                <div>Software development</div>
+                <div>Backend Projects</div>
             </a>
             <a
                 href="/devops"
@@ -71,21 +71,7 @@ const { selectedItem } = Astro.props;
                     alt=""
                     class="nav-link-image"
                 />
-                <div>DevOps</div>
-            </a>
-            <a
-                href="/personal-projects"
-                class={`nav-link-container w-inline-block ${
-                    selectedItem === "personal-projects" ? "w--current" : ""
-                }`}
-            >
-                <img
-                    src="/assets/favorite.svg"
-                    loading="eager"
-                    alt=""
-                    class="nav-link-image"
-                />
-                <div>Personal projects</div>
+                <div>DevOps & Embedded</div>
             </a>
             <a
                 href="/certificates"
@@ -102,7 +88,21 @@ const { selectedItem } = Astro.props;
                     alt=""
                     class="nav-link-image"
                 />
-                <div>Certificates</div>
+                <div>Achievements</div>
+            </a>
+            <a
+                href="/personal-projects"
+                class={`nav-link-container w-inline-block ${
+                    selectedItem === "personal-projects" ? "w--current" : ""
+                }`}
+            >
+                <img
+                    src="/assets/favorite.svg"
+                    loading="eager"
+                    alt=""
+                    class="nav-link-image"
+                />
+                <div>Personal</div>
             </a>
         </nav>
 

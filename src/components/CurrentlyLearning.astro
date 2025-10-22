@@ -1,0 +1,139 @@
+---
+const { items } = Astro.props;
+---
+
+<div class="learning-container">
+    <h2 class="learning-title">Currently Learning</h2>
+    <div class="learning-grid">
+        {
+            items.map((item) => (
+                <div class="learning-card">
+                    <div class="learning-header">
+                        <span class="learning-icon">{item.icon}</span>
+                        <div class="learning-info">
+                            <h3 class="learning-name">{item.title}</h3>
+                            <span class="learning-platform">
+                                {item.platform}
+                            </span>
+                        </div>
+                    </div>
+                    <p class="learning-description">{item.description}</p>
+                    <div class="progress-container">
+                        <div class="progress-bar">
+                            <div
+                                class="progress-fill"
+                                style={`width: ${item.progress}%`}
+                            />
+                        </div>
+                        <span class="progress-text">{item.progress}%</span>
+                    </div>
+                </div>
+            ))
+        }
+    </div>
+</div>
+
+<style>
+    .learning-container {
+        margin: 3rem 0;
+    }
+
+    .learning-title {
+        font-size: 1.75rem;
+        font-weight: 600;
+        color: #ffffff;
+        opacity: 0.95;
+        margin-bottom: 1.5rem;
+    }
+
+    .learning-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.25rem;
+    }
+
+    .learning-card {
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 12px;
+        padding: 1.5rem;
+        transition: all 0.3s ease;
+    }
+
+    .learning-card:hover {
+        background: rgba(255, 255, 255, 0.05);
+        border-color: rgba(74, 158, 255, 0.3);
+        transform: translateY(-4px);
+    }
+
+    .learning-header {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .learning-icon {
+        font-size: 2rem;
+        line-height: 1;
+    }
+
+    .learning-info {
+        flex: 1;
+    }
+
+    .learning-name {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: #ffffff;
+        margin: 0 0 0.25rem 0;
+    }
+
+    .learning-platform {
+        font-size: 0.85rem;
+        color: #4a9eff;
+        font-weight: 500;
+    }
+
+    .learning-description {
+        font-size: 0.9rem;
+        color: #aaa;
+        line-height: 1.5;
+        margin: 0 0 1rem 0;
+    }
+
+    .progress-container {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+    }
+
+    .progress-bar {
+        flex: 1;
+        height: 8px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 4px;
+        overflow: hidden;
+    }
+
+    .progress-fill {
+        height: 100%;
+        background: linear-gradient(90deg, #4a9eff, #6eb5ff);
+        border-radius: 4px;
+        transition: width 0.3s ease;
+    }
+
+    .progress-text {
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: #4a9eff;
+        min-width: 40px;
+        text-align: right;
+    }
+
+    @media (max-width: 768px) {
+        .learning-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>

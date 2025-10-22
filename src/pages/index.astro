@@ -2,19 +2,20 @@
 import Header from "../components/Header.astro";
 import Sidebar from "../components/Sidebar.astro";
 import Timeline from "../components/Timeline.astro";
+import CurrentlyLearning from "../components/CurrentlyLearning.astro";
+import Stats from "../components/Stats.astro";
 
 const timelineItems = [
     {
-        date: "Oct 2025",
+        date: "Oct 2024",
         category: "course",
         title: "Started Advanced Backend Development (boot.dev)",
         description:
             "Enrolled in comprehensive backend engineering track covering Go, system design, and distributed systems.",
         tags: ["Go", "Backend", "Learning"],
-        // No detailUrl - quick reference only
     },
     {
-        date: "Aug 2025",
+        date: "Aug 2024",
         category: "trip",
         title: "Japan STEM Innovation Trip",
         description:
@@ -28,9 +29,9 @@ const timelineItems = [
         detailUrl: "/timeline/japan-stem-trip",
     },
     {
-        date: "Mar 2025",
+        date: "Mar 2024",
         category: "competition",
-        title: "National Cyber League - Spring 2025",
+        title: "National Cyber League - Spring 2024",
         description:
             "Competed in comprehensive cybersecurity challenges, achieving Top 10% nationally.",
         highlights: [
@@ -42,7 +43,7 @@ const timelineItems = [
         detailUrl: "/timeline/ncl-spring-2025",
     },
     {
-        date: "Jan 2025",
+        date: "Jan 2024",
         category: "achievement",
         title: "AWS Solutions Architect Certification",
         description:
@@ -50,7 +51,7 @@ const timelineItems = [
         tags: ["AWS", "Cloud", "Certification"],
     },
     {
-        date: "Nov 2024",
+        date: "Nov 2023",
         category: "project",
         title: "Built Microservices Platform for School Management",
         description:
@@ -64,7 +65,7 @@ const timelineItems = [
         detailUrl: "/timeline/school-management-platform",
     },
     {
-        date: "Sep 2024",
+        date: "Sep 2023",
         category: "activity",
         title: "Founded School DevOps Club",
         description:
@@ -77,7 +78,7 @@ const timelineItems = [
         tags: ["Leadership", "Teaching", "DevOps"],
     },
     {
-        date: "Jun 2024",
+        date: "Jun 2023",
         category: "trip",
         title: "Google Singapore Office Visit",
         description:
@@ -86,7 +87,20 @@ const timelineItems = [
         detailUrl: "/timeline/google-singapore-visit",
     },
     {
-        date: "Feb 2024",
+        date: "2023 - Present",
+        category: "achievement",
+        title: "Selected for IDP (Integrated Diploma Programme)",
+        description:
+            "Accepted into SST-NP's Integrated Diploma Programme - a direct pathway from secondary school to Ngee Ann Polytechnic without O-Levels.",
+        highlights: [
+            "One of ~50 students selected per cohort",
+            "Direct entry to NP STEM diploma courses",
+            "Focus on applied learning and industry projects",
+        ],
+        tags: ["SST", "IDP", "Achievement"],
+    },
+    {
+        date: "Feb 2023",
         category: "competition",
         title: "AWS GameDay Competition",
         description:
@@ -99,19 +113,60 @@ const timelineItems = [
         tags: ["AWS", "Competition", "Team"],
     },
     {
-        date: "2024 - Present",
+        date: "2022 - Present",
         category: "activity",
-        title: "Computer Science at SST",
+        title: "Engineering+ Program at SST",
         description:
-            "Pursuing Computer Science specialization, focusing on software engineering and cloud computing.",
-        tags: ["SST", "CS", "Singapore"],
+            "Pursuing both Computing+ and Electronics as Applied Subjects - a unique dual-track program at School of Science and Technology.",
+        tags: ["SST", "Engineering+", "STEM"],
     },
 ];
+
+const currentlyLearning = [
+    {
+        title: "Typescript Programming",
+        platform: "boot.dev",
+        progress: 75,
+        icon: "🐹",
+        description:
+            "Deep-diving into Typescript for backend systems and microservices",
+    },
+    {
+        title: "Embedded Systems",
+        platform: "Self-study & SST Electronics",
+        progress: 60,
+        icon: "🔌",
+        description:
+            "Working with microcontrollers, sensors, and real-time systems",
+    },
+    {
+        title: "Distributed Systems",
+        platform: "MIT OpenCourseWare",
+        progress: 40,
+        icon: "🌐",
+        description:
+            "Learning consensus algorithms, replication, and fault tolerance",
+    },
+    {
+        title: "System Design",
+        platform: "Self-study",
+        progress: 55,
+        icon: "🏗️",
+        description: "Studying scalable architecture patterns and trade-offs",
+    },
+];
+
+const stats = {
+    projectsCompleted: 12,
+    certificatesEarned: 8,
+    competitionsJoined: 5,
+    yearsOfCoding: 3,
+};
 ---
 
 <!doctype html>
 <html>
-    <Header title="Adam Lee" />
+    <Header title="Adam Lee - Engineering+ Student @ SST" />
     <body>
         <div class="content">
             <Sidebar selectedItem="home" />
@@ -120,23 +175,111 @@ const timelineItems = [
                     <main class="fold-content-container">
                         <div class="fold-content">
                             <h1>
-                                Hi, I'm Adam.<br />I'm an aspiring engineer.
+                                Hi, I'm Adam.<br />I build things.
                             </h1>
                             <p class="lead">
-                                Student from the School of Science and
-                                Technology, Singapore. Experienced backend
-                                developer and cloud architect. A proactive team
-                                member dedicated to continuous learning,
-                                problem-solving, and aiding teammates in
-                                achieving quicker outcomes.
+                                <strong>Engineering+ student</strong> at School of
+                                Science and Technology, Singapore, taking both <strong
+                                    >Computing+</strong
+                                > and <strong>Electronics</strong>. Part of the <strong
+                                    >IDP (Integrated Diploma Programme)</strong
+                                > cohort with a direct pathway to Ngee Ann Polytechnic.
                             </p>
+                            <p class="sub-lead">
+                                I'm passionate about <strong
+                                    >backend engineering</strong
+                                > and <strong>embedded systems</strong>,
+                                bridging the gap between software and hardware.
+                                Whether it's deploying microservices on
+                                Kubernetes or programming microcontrollers. I
+                                love working with all things tech.
+                            </p>
+                            <div class="program-badges">
+                                <div class="badge">
+                                    <svg
+                                        class="badge-icon"
+                                        width="28"
+                                        height="28"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="#4a9eff"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                    >
+                                        <polygon
+                                            points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"
+                                        ></polygon>
+                                    </svg>
+                                    <div class="badge-text">
+                                        <div class="badge-title">
+                                            Engineering+
+                                        </div>
+                                        <div class="badge-subtitle">
+                                            Computing & Electronics
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="badge">
+                                    <svg
+                                        class="badge-icon"
+                                        width="28"
+                                        height="28"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="#4a9eff"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                    >
+                                        <path d="M22 10v6M2 10l10-5 10 5-10 5z"
+                                        ></path>
+                                        <path d="M6 12v5c3 3 9 3 12 0v-5"
+                                        ></path>
+                                    </svg>
+                                    <div class="badge-text">
+                                        <div class="badge-title">
+                                            3rd IDP Cohort
+                                        </div>
+                                        <div class="badge-subtitle">
+                                            SST to Ngee Ann Poly
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cta-buttons">
+                                <a
+                                    href="mailto:useradamlee@users.noreply.github.com"
+                                    class="button primary-button"
+                                    >Get in Touch</a
+                                >
+                                <a
+                                    href="https://github.com/useradamlee"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="button secondary-button"
+                                >
+                                    <img
+                                        src="/assets/github-icon.svg"
+                                        alt="GitHub"
+                                        class="button-icon"
+                                    />
+                                    View GitHub
+                                </a>
+                            </div>
                         </div>
+
+                        <!-- Stats Section -->
+                        <Stats stats={stats} />
+
+                        <!-- Currently Learning Section -->
+                        <CurrentlyLearning items={currentlyLearning} />
 
                         <!-- Timeline Section -->
                         <Timeline items={timelineItems} />
 
                         <div class="projects-section">
-                            <!-- Software Development -->
+                            <!-- Backend Development -->
                             <a
                                 href="/software-development"
                                 class="projects-container"
@@ -154,7 +297,7 @@ const timelineItems = [
                                     </div>
                                 </div>
                                 <div class="single-projects-content">
-                                    <h4>Software Development</h4>
+                                    <h4>Backend Development</h4>
                                     <div class="tech-tools-container">
                                         <div
                                             class="mini-label-white gray-color"
@@ -165,46 +308,46 @@ const timelineItems = [
                                             class="chips-container chips-container-small-width"
                                         >
                                             <div class="single-chip small-chip">
-                                                React
-                                            </div>
-                                            <div class="single-chip small-chip">
-                                                Next.js
+                                                Go
                                             </div>
                                             <div class="single-chip small-chip">
                                                 Node.js
                                             </div>
                                             <div class="single-chip small-chip">
-                                                MongoDB
-                                            </div>
-                                            <div class="single-chip small-chip">
-                                                Heroku
-                                            </div>
-                                            <div class="single-chip small-chip">
-                                                RabbitMQ
-                                            </div>
-                                            <div class="single-chip small-chip">
-                                                Express.js
+                                                Python
                                             </div>
                                             <div class="single-chip small-chip">
                                                 TypeScript
                                             </div>
                                             <div class="single-chip small-chip">
-                                                NestJS
+                                                PostgreSQL
                                             </div>
                                             <div class="single-chip small-chip">
-                                                Angular
+                                                MongoDB
                                             </div>
                                             <div class="single-chip small-chip">
-                                                Postgres
+                                                Redis
                                             </div>
                                             <div class="single-chip small-chip">
-                                                Linode
+                                                Docker
+                                            </div>
+                                            <div class="single-chip small-chip">
+                                                Kubernetes
+                                            </div>
+                                            <div class="single-chip small-chip">
+                                                RabbitMQ
+                                            </div>
+                                            <div class="single-chip small-chip">
+                                                REST APIs
+                                            </div>
+                                            <div class="single-chip small-chip">
+                                                Microservices
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </a>
-                            <!-- DevOps & Cloud -->
+                            <!-- DevOps & Embedded -->
                             <a href="/devops" class="projects-container">
                                 <div class="single-projects-category">
                                     <div
@@ -219,7 +362,7 @@ const timelineItems = [
                                     </div>
                                 </div>
                                 <div class="single-projects-content">
-                                    <h4>DevOps &amp;&nbsp;Cloud</h4>
+                                    <h4>DevOps &amp; Embedded</h4>
                                     <div class="tech-tools-container">
                                         <div
                                             class="mini-label-white gray-color"
@@ -230,37 +373,34 @@ const timelineItems = [
                                             class="chips-container chips-container-small-width"
                                         >
                                             <div class="single-chip small-chip">
-                                                Terraform
+                                                AWS
                                             </div>
                                             <div class="single-chip small-chip">
                                                 Azure
                                             </div>
                                             <div class="single-chip small-chip">
-                                                AWS
-                                            </div>
-                                            <div class="single-chip small-chip">
-                                                Docker
-                                            </div>
-                                            <div class="single-chip small-chip">
-                                                Kubernetes
+                                                Terraform
                                             </div>
                                             <div class="single-chip small-chip">
                                                 GitLab CI/CD
                                             </div>
                                             <div class="single-chip small-chip">
-                                                RKE
-                                            </div>
-                                            <div class="single-chip small-chip">
-                                                Node.js
-                                            </div>
-                                            <div class="single-chip small-chip">
-                                                RabbitMQ
-                                            </div>
-                                            <div class="single-chip small-chip">
                                                 Linux
                                             </div>
                                             <div class="single-chip small-chip">
-                                                Bash
+                                                Arduino
+                                            </div>
+                                            <div class="single-chip small-chip">
+                                                Raspberry Pi
+                                            </div>
+                                            <div class="single-chip small-chip">
+                                                C/C++
+                                            </div>
+                                            <div class="single-chip small-chip">
+                                                IoT
+                                            </div>
+                                            <div class="single-chip small-chip">
+                                                Sensors
                                             </div>
                                             <div class="single-chip small-chip">
                                                 Grafana
@@ -276,8 +416,137 @@ const timelineItems = [
                     </main>
                 </div>
             </nav>
-
-            <!--[if lte IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]-->
         </div>
     </body>
 </html>
+
+<style>
+    .sub-lead {
+        font-size: 1rem;
+        color: #aaa;
+        line-height: 1.6;
+        margin-top: 1rem;
+        max-width: 700px;
+    }
+
+    .lead strong,
+    .sub-lead strong {
+        color: #4a9eff;
+        font-weight: 600;
+    }
+
+    .program-badges {
+        display: flex;
+        gap: 1rem;
+        margin-top: 1.5rem;
+        flex-wrap: wrap;
+    }
+
+    .badge {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 0.875rem 1.25rem;
+        background: rgba(74, 158, 255, 0.1);
+        border: 1px solid rgba(74, 158, 255, 0.3);
+        border-radius: 10px;
+        transition: all 0.3s ease;
+    }
+
+    .badge:hover {
+        background: rgba(74, 158, 255, 0.15);
+        border-color: rgba(74, 158, 255, 0.5);
+        transform: translateY(-2px);
+    }
+
+    .badge-icon {
+        flex-shrink: 0;
+        display: block;
+    }
+
+    .badge-text {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .badge-title {
+        font-size: 0.95rem;
+        font-weight: 600;
+        color: #fff;
+        line-height: 1.3;
+    }
+
+    .badge-subtitle {
+        font-size: 0.8rem;
+        color: #888;
+        margin-top: 0.15rem;
+        line-height: 1.2;
+    }
+
+    .cta-buttons {
+        display: flex;
+        gap: 1rem;
+        margin-top: 2rem;
+        flex-wrap: wrap;
+    }
+
+    .button {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.875rem 1.75rem;
+        border-radius: 8px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        font-size: 1rem;
+    }
+
+    .primary-button {
+        background: #4a9eff;
+        color: #fff;
+        border: 2px solid #4a9eff;
+    }
+
+    .primary-button:hover {
+        background: #3a8eef;
+        border-color: #3a8eef;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(74, 158, 255, 0.3);
+    }
+
+    .secondary-button {
+        background: transparent;
+        color: #fff;
+        border: 2px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .secondary-button:hover {
+        border-color: #fff;
+        background: rgba(255, 255, 255, 0.05);
+    }
+
+    .button-icon {
+        width: 20px;
+        height: 20px;
+    }
+
+    @media (max-width: 768px) {
+        .program-badges {
+            flex-direction: column;
+        }
+
+        .badge {
+            width: 100%;
+        }
+
+        .cta-buttons {
+            flex-direction: column;
+        }
+
+        .button {
+            justify-content: center;
+            width: 100%;
+        }
+    }
+</style>

@@ -1,0 +1,71 @@
+---
+const { stats } = Astro.props;
+---
+
+<div class="stats-container">
+    <div class="stat-item">
+        <div class="stat-number">{stats.projectsCompleted}+</div>
+        <div class="stat-label">Projects Built</div>
+    </div>
+    <div class="stat-item">
+        <div class="stat-number">{stats.certificatesEarned}</div>
+        <div class="stat-label">Certificates</div>
+    </div>
+    <div class="stat-item">
+        <div class="stat-number">{stats.competitionsJoined}</div>
+        <div class="stat-label">Competitions</div>
+    </div>
+    <div class="stat-item">
+        <div class="stat-number">{stats.yearsOfCoding}</div>
+        <div class="stat-label">Years Coding</div>
+    </div>
+</div>
+
+<style>
+    .stats-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 1.5rem;
+        margin: 3rem 0;
+        padding: 2rem;
+        background: rgba(255, 255, 255, 0.02);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 12px;
+    }
+
+    .stat-item {
+        text-align: center;
+    }
+
+    .stat-number {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #4a9eff;
+        line-height: 1;
+        margin-bottom: 0.5rem;
+    }
+
+    .stat-label {
+        font-size: 0.9rem;
+        color: #888;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    @media (max-width: 768px) {
+        .stats-container {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            padding: 1.5rem;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+        }
+    }
+</style>
