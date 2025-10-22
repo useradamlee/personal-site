@@ -15,11 +15,11 @@ const { title } = Astro.props as HeaderProps;
 
     <ViewTransitions />
 
-    <!-- Preload critical assets -->
+    <!-- Preload critical CSS -->
     <link rel="preload" href="/assets/styles.css" as="style" />
     <link rel="stylesheet" href="/assets/styles.css" />
 
-    <!-- Only if you actually use Google Fonts -->
+    <!-- Only keep if you use Google Fonts, otherwise remove -->
     <!-- <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /> -->
 
@@ -33,4 +33,8 @@ const { title } = Astro.props as HeaderProps;
                     (n.className += t + "touch"));
         })(window, document);
     </script>
+
+    <!-- Uncomment if you want favicons -->
+    <!-- <link href="/assets/favicon-32x32.png" rel="shortcut icon" type="image/x-icon" />
+    <link href="/assets/favicon-32x32.png" rel="apple-touch-icon" /> -->
 </head>
