@@ -1,7 +1,6 @@
 ---
 const { items } = Astro.props;
 
-// Categorize items by type
 const categories = {
     competition: { label: "Competition", color: "#FFD700" },
     trip: { label: "School Trip", color: "#10B981" },
@@ -21,7 +20,7 @@ const categories = {
                     <div class="legend-item">
                         <span
                             class="legend-dot"
-                            style={`background: ${cat.color};`}
+                            style={`--cat-color: ${cat.color}`}
                         />
                         <span class="legend-label">{cat.label}</span>
                     </div>
@@ -38,21 +37,18 @@ const categories = {
                 const ItemTag = item.detailUrl ? "a" : "div";
 
                 return (
-                    <div class="timeline-item">
-                        <div
-                            class="timeline-marker"
-                            style={`background: ${category.color}; box-shadow: 0 0 0 4px ${category.color}33;`}
-                        />
+                    <div
+                        class="timeline-item"
+                        style={`--cat-color: ${category.color}`}
+                    >
+                        <div class="timeline-marker" />
                         <ItemTag
                             href={item.detailUrl}
                             class={`timeline-content ${item.detailUrl ? "timeline-content-clickable" : ""}`}
                         >
                             <div class="timeline-header-row">
                                 <div class="timeline-date">{item.date}</div>
-                                <span
-                                    class="timeline-category-badge"
-                                    style={`background: ${category.color}22; color: ${category.color};`}
-                                >
+                                <span class="timeline-category-badge">
                                     {category.label}
                                 </span>
                             </div>
@@ -87,8 +83,7 @@ const categories = {
 
 <style>
     .timeline-container {
-        margin-top: 3rem;
-        margin-bottom: 3rem;
+        margin: 3rem 0;
     }
 
     .timeline-header {
@@ -98,7 +93,7 @@ const categories = {
     .timeline-title {
         font-size: 1.75rem;
         font-weight: 600;
-        color: #ffffff;
+        color: #fff;
         opacity: 0.95;
         margin-bottom: 1rem;
     }
@@ -119,6 +114,7 @@ const categories = {
         width: 10px;
         height: 10px;
         border-radius: 50%;
+        background: var(--cat-color);
     }
 
     .legend-label {
@@ -162,6 +158,9 @@ const categories = {
         width: 12px;
         height: 12px;
         border-radius: 50%;
+        background: var(--cat-color);
+        box-shadow: 0 0 0 4px
+            color-mix(in srgb, var(--cat-color) 20%, transparent);
         border: 3px solid rgba(20, 20, 30, 1);
         z-index: 1;
         transition: transform 0.3s ease;
@@ -215,27 +214,29 @@ const categories = {
         font-weight: 600;
         text-transform: uppercase;
         letter-spacing: 0.5px;
+        background: color-mix(in srgb, var(--cat-color) 13%, transparent);
+        color: var(--cat-color);
     }
 
     .timeline-heading {
         font-size: 1.1rem;
         font-weight: 600;
-        color: #ffffff;
+        color: #fff;
         opacity: 0.95;
-        margin: 0 0 0.5rem 0;
+        margin: 0 0 0.5rem;
     }
 
     .timeline-description {
         font-size: 0.95rem;
         color: #aaa;
         line-height: 1.6;
-        margin: 0 0 0.75rem 0;
+        margin: 0 0 0.75rem;
     }
 
     .timeline-highlights {
         list-style: none;
         padding: 0;
-        margin: 0 0 0.75rem 0;
+        margin: 0 0 0.75rem;
     }
 
     .timeline-highlights li {
@@ -281,19 +282,15 @@ const categories = {
         .timeline {
             padding-left: 1.5rem;
         }
-
         .timeline-item {
             padding-left: 1rem;
         }
-
         .timeline-marker {
             left: -1.85rem;
         }
-
         .timeline-legend {
             gap: 0.75rem;
         }
-
         .legend-label {
             font-size: 0.8rem;
         }

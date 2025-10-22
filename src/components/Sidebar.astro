@@ -14,15 +14,15 @@ const { selectedItem } = Astro.props;
     <div class="nav-content">
         <a href="/" class="w-nav-brand" aria-label="home">
             <div class="niv-data">
-                <img
+                <!-- <img
                     src="/assets/sam.jpg"
                     loading="lazy"
                     decoding="async"
                     width="48"
                     height="48"
-                    alt="Profile picture"
+                    alt="Adam Lee"
                     class="niv-image"
-                />
+                /> -->
                 <div>
                     <div class="label-white">Adam Lee</div>
                     <div class="label-gray">Engineering+ @ SST</div>
@@ -147,13 +147,18 @@ const { selectedItem } = Astro.props;
         import { setupNav } from "../scripts/nav.js";
 
         let cleanup: (() => void) | undefined;
-        document.addEventListener("astro:page-load", () => {
+
+        const initNav = () => {
             if (cleanup) cleanup();
             cleanup = setupNav();
-        });
+        };
 
+        document.addEventListener("astro:page-load", initNav);
         document.addEventListener("astro:before-swap", () => {
-            if (cleanup) cleanup();
+            if (cleanup) {
+                cleanup();
+                cleanup = undefined;
+            }
         });
     </script>
 </aside>
