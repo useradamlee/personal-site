@@ -16,7 +16,10 @@ const { selectedItem } = Astro.props;
             <div class="niv-data">
                 <img
                     src="/assets/sam.jpg"
-                    loading="eager"
+                    loading="lazy"
+                    decoding="async"
+                    width="48"
+                    height="48"
                     alt="Profile picture"
                     class="niv-image"
                 />
@@ -36,7 +39,10 @@ const { selectedItem } = Astro.props;
             >
                 <img
                     src="/assets/home.svg"
-                    loading="eager"
+                    loading="lazy"
+                    decoding="async"
+                    width="20"
+                    height="20"
                     alt=""
                     class="nav-link-image"
                 />
@@ -53,7 +59,10 @@ const { selectedItem } = Astro.props;
             >
                 <img
                     src="/assets/code.svg"
-                    loading="eager"
+                    loading="lazy"
+                    decoding="async"
+                    width="20"
+                    height="20"
                     alt=""
                     class="nav-link-image"
                 />
@@ -67,7 +76,10 @@ const { selectedItem } = Astro.props;
             >
                 <img
                     src="/assets/dns.svg"
-                    loading="eager"
+                    loading="lazy"
+                    decoding="async"
+                    width="20"
+                    height="20"
                     alt=""
                     class="nav-link-image"
                 />
@@ -84,7 +96,10 @@ const { selectedItem } = Astro.props;
             >
                 <img
                     src="/assets/award.svg"
-                    loading="eager"
+                    loading="lazy"
+                    decoding="async"
+                    width="20"
+                    height="20"
                     alt=""
                     class="nav-link-image"
                 />
@@ -98,7 +113,10 @@ const { selectedItem } = Astro.props;
             >
                 <img
                     src="/assets/favorite.svg"
-                    loading="eager"
+                    loading="lazy"
+                    decoding="async"
+                    width="20"
+                    height="20"
                     alt=""
                     class="nav-link-image"
                 />
@@ -115,7 +133,10 @@ const { selectedItem } = Astro.props;
         >
             <img
                 src="/assets/menu.svg"
-                loading="eager"
+                loading="lazy"
+                decoding="async"
+                width="24"
+                height="24"
                 alt=""
                 class="navbar-icon"
             />
@@ -125,7 +146,7 @@ const { selectedItem } = Astro.props;
     <script>
         import { setupNav } from "../scripts/nav.js";
 
-        let cleanup;
+        let cleanup: (() => void) | undefined;
         document.addEventListener("astro:page-load", () => {
             if (cleanup) cleanup();
             cleanup = setupNav();
