@@ -1,5 +1,4 @@
 ---
-import { ViewTransitions } from "astro:transitions";
 interface HeaderProps {
     title: string;
 }
@@ -15,7 +14,7 @@ const { title } = Astro.props as HeaderProps;
 
     <link href="/assets/styles.css" rel="stylesheet" type="text/css" />
 
-    <ViewTransitions />
+    <meta name="view-transition" content="same-origin" />
 
     <script is:inline>
         !(function (o, c) {
@@ -26,5 +25,12 @@ const { title } = Astro.props as HeaderProps;
                     (o.DocumentTouch && c instanceof DocumentTouch)) &&
                     (n.className += t + "touch"));
         })(window, document);
+    </script>
+
+    <!-- Optional: Add view-transition class for CSS -->
+    <script is:inline>
+        if ("ViewTransition" in window || document.startViewTransition) {
+            document.documentElement.classList.add("view-transitions");
+        }
     </script>
 </head>
