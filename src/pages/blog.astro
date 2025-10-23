@@ -2,17 +2,17 @@
 import Header from "../components/Header.astro";
 import Sidebar from "../components/Sidebar.astro";
 import Blog from "../components/Blog.astro";
+import { getSlugFromFilePath } from "../utils/blog";
 
-const blogPosts = [
-    {
-        url: "/ncl-spring-2025",
-        frontmatter: (await import("../data/blog/ncl-spring-2025.md")).frontmatter,
-    },
-    {
-        url: "/PC-ITP-Trip",
-        frontmatter: (await import("../data/blog/PC-ITP-Trip.md")).frontmatter,
-    },
-];
+const allPosts = await Astro.glob("../data/blog/*.md");
+
+const blogPosts = allPosts.map((post) => {
+    const slug = getSlugFromFilePath(post.file);
+    return {
+        url: `/${slug}`,
+        frontmatter: post.frontmatter,
+    };
+});
 ---
 
 <!doctype html>
