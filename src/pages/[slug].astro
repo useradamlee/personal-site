@@ -3,7 +3,14 @@ import TimelineLayout from "../layouts/TimelineLayout.astro";
 import { getSlugFromFilePath } from "../utils/blog";
 
 export async function getStaticPaths() {
-    const blogPosts = await Astro.glob("../data/blog/*.md");
+    const blogPostModules = import.meta.glob("../data/blog/*.md");
+    
+    const blogPosts = await Promise.all(
+        Object.entries(blogPostModules).map(async ([path, loader]) => {
+            const post = await loader();
+            return { ...post, file: path };
+        })
+    );
     
     return blogPosts.map((post) => {
         const slug = getSlugFromFilePath(post.file);
