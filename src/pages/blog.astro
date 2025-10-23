@@ -1,7 +1,7 @@
 ---
 import Header from "../components/Header.astro";
 import Sidebar from "../components/Sidebar.astro";
-import Blog from "../components/Blog.astro";
+import BlogList from "../components/BlogList.astro";
 import { getSlugFromFilePath } from "../utils/blog";
 
 const allPosts = await Astro.glob("../data/blog/*.md");
@@ -36,7 +36,10 @@ const blogPosts = allPosts.map((post) => {
                     </div>
                     <div class="content-container">
                         <h1>Blog</h1>
-                        <Blog posts={blogPosts} />
+                        <p class="blog-subtitle">
+                            Thoughts, experiences, and learnings from my journey in tech.
+                        </p>
+                        <BlogList posts={blogPosts} />
                     </div>
                 </div>
             </nav>
@@ -44,4 +47,12 @@ const blogPosts = allPosts.map((post) => {
     </body>
 </html>
 
+<style>
+    .blog-subtitle {
+        font-size: 1rem;
+        color: #888;
+        line-height: 1.6;
+        margin: 0.5rem 0 1.5rem 0;
+    }
+</style>
 
