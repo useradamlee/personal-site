@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/TimelineLayout.astro
 title: "National Cyber League - Spring 2025"
 date: "March 2025"
 category: "Competition"

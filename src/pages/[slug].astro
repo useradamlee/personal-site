@@ -1,0 +1,23 @@
+---
+import TimelineLayout from "../layouts/TimelineLayout.astro";
+import { getSlugFromFilePath } from "../utils/blog";
+
+export async function getStaticPaths() {
+    const blogPosts = await Astro.glob("../data/blog/*.md");
+    
+    return blogPosts.map((post) => {
+        const slug = getSlugFromFilePath(post.file);
+        return {
+            params: { slug },
+            props: { post },
+        };
+    });
+}
+
+const { post } = Astro.props;
+const { Content, frontmatter } = post;
+---
+
+<TimelineLayout frontmatter={frontmatter}>
+    <Content />
+</TimelineLayout>

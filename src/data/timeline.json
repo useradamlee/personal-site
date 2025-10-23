@@ -1,106 +1,53 @@
 [
-    {
-        "date": "Oct 2024",
-        "category": "course",
-        "title": "Started Advanced Backend Development (boot.dev)",
-        "description": "Enrolled in comprehensive backend engineering track covering Go, system design, and distributed systems.",
-        "tags": ["Go", "Backend", "Learning"]
-    },
-    {
-        "date": "Aug 2024",
-        "category": "trip",
-        "title": "Japan STEM Innovation Trip",
-        "description": "Week-long immersive experience exploring robotics labs, tech startups, and innovation centers in Tokyo and Osaka.",
-        "highlights": [
-            "Visited Sony AI Research Lab",
-            "Attended workshop at TeamLab Borderless",
-            "Collaborated with local students on IoT project"
-        ],
-        "tags": ["Japan", "Robotics", "Innovation"],
-        "detailUrl": "/timeline/japan-stem-trip"
-    },
-    {
-        "date": "Mar 2024",
-        "category": "competition",
-        "title": "National Cyber League - Spring 2024",
-        "description": "Competed in comprehensive cybersecurity challenges, achieving Top 10% nationally.",
-        "highlights": [
-            "Ranked Top 10% out of 5,000+ participants",
-            "Specialized in cryptography and web exploitation",
-            "Solved 45+ security challenges"
-        ],
-        "tags": ["Cybersecurity", "Top 10%", "NCL"],
-        "detailUrl": "/timeline/ncl-spring-2025"
-    },
-    {
-        "date": "Jan 2024",
-        "category": "achievement",
-        "title": "AWS Solutions Architect Certification",
-        "description": "Earned AWS Certified Solutions Architect - Associate certification, demonstrating cloud architecture proficiency.",
-        "tags": ["AWS", "Cloud", "Certification"]
-    },
-    {
-        "date": "Nov 2023",
-        "category": "project",
-        "title": "Built Microservices Platform for School Management",
-        "description": "Led development of a distributed system for school event management using Kubernetes and Docker.",
-        "highlights": [
-            "Deployed on 3-node Kubernetes cluster",
-            "Served 500+ concurrent users",
-            "Implemented CI/CD with GitLab"
-        ],
-        "tags": ["Kubernetes", "Microservices", "Leadership"],
-        "detailUrl": "/timeline/school-management-platform"
-    },
-    {
-        "date": "Sep 2023",
-        "category": "activity",
-        "title": "Founded School DevOps Club",
-        "description": "Started a club to teach students about DevOps practices, cloud computing, and infrastructure automation.",
-        "highlights": [
-            "30+ active members",
-            "Weekly workshops on Docker, K8s, CI/CD",
-            "Organized cloud computing hackathon"
-        ],
-        "tags": ["Leadership", "Teaching", "DevOps"]
-    },
-    {
-        "date": "Jun 2023",
-        "category": "trip",
-        "title": "Google Singapore Office Visit",
-        "description": "Selected for exclusive tour of Google Singapore, attended talks on SRE practices and cloud infrastructure.",
-        "tags": ["Google", "SRE", "Networking"],
-        "detailUrl": "/timeline/google-singapore-visit"
-    },
-    {
-        "date": "2023 - Present",
-        "category": "achievement",
-        "title": "Selected for IDP (Integrated Diploma Programme)",
-        "description": "Accepted into SST-NP's Integrated Diploma Programme - a direct pathway from secondary school to Ngee Ann Polytechnic without O-Levels.",
-        "highlights": [
-            "One of ~50 students selected per cohort",
-            "Direct entry to NP STEM diploma courses",
-            "Focus on applied learning and industry projects"
-        ],
-        "tags": ["SST", "IDP", "Achievement"]
-    },
-    {
-        "date": "Feb 2023",
-        "category": "competition",
-        "title": "AWS GameDay Competition",
-        "description": "Participated in AWS GameDay, troubleshooting and optimizing cloud infrastructure under time pressure.",
-        "highlights": [
-            "Team placed 3rd out of 20 teams",
-            "Optimized costs by 40%",
-            "Improved system resilience"
-        ],
-        "tags": ["AWS", "Competition", "Team"]
-    },
-    {
-        "date": "2022 - Present",
-        "category": "activity",
-        "title": "Engineering+ Program at SST",
-        "description": "Pursuing both Computing+ and Electronics as Applied Subjects - a unique dual-track program at School of Science and Technology.",
-        "tags": ["SST", "Engineering+", "STEM"]
-    }
+  {
+    "date": "Oct 2024",
+    "category": "course",
+    "title": "Started Advanced Backend Development (boot.dev)",
+    "description": "Enrolled in comprehensive backend engineering track covering Go, system design, and distributed systems.",
+    "tags": ["Go", "Backend", "Learning"]
+  },
+  {
+    "date": "Mar 2024",
+    "category": "competition",
+    "title": "National Cyber League - Spring 2024",
+    "description": "Competed in comprehensive cybersecurity challenges, achieving Top 10% nationally.",
+    "highlights": [
+      "Ranked Top 10% out of 5,000+ participants",
+      "Specialized in cryptography and web exploitation",
+      "Solved 45+ security challenges"
+    ],
+    "tags": ["Cybersecurity", "Top 10%", "NCL"],
+    "detailUrl": "/ncl-spring-2025"
+  },
+  {
+    "date": "2023 - Present",
+    "category": "achievement",
+    "title": "Selected for IDP (Integrated Diploma Programme)",
+    "description": "Accepted into SST-NP's Integrated Diploma Programme - a direct pathway from secondary school to Ngee Ann Polytechnic without O-Levels.",
+    "highlights": [
+      "One of ~50 students selected per cohort",
+      "Direct entry to NP STEM diploma courses",
+      "Focus on applied learning and industry projects"
+    ],
+    "tags": ["SST", "IDP", "Achievement"]
+  },
+  {
+    "date": "Feb 2023",
+    "category": "competition",
+    "title": "AWS GameDay Competition",
+    "description": "Participated in AWS GameDay, troubleshooting and optimizing cloud infrastructure under time pressure.",
+    "highlights": [
+      "Team placed 3rd out of 20 teams",
+      "Optimized costs by 40%",
+      "Improved system resilience"
+    ],
+    "tags": ["AWS", "Competition", "Team"]
+  },
+  {
+    "date": "2022 - Present",
+    "category": "activity",
+    "title": "Engineering+ Program at SST",
+    "description": "Pursuing both Computing+ and Electronics as Applied Subjects - a unique dual-track program at School of Science and Technology.",
+    "tags": ["SST", "Engineering+", "STEM"]
+  }
 ]

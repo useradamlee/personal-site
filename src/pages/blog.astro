@@ -1,0 +1,58 @@
+---
+import Header from "../components/Header.astro";
+import Sidebar from "../components/Sidebar.astro";
+import BlogList from "../components/BlogList.astro";
+import { getSlugFromFilePath } from "../utils/blog";
+
+const allPosts = await Astro.glob("../data/blog/*.md");
+
+const blogPosts = allPosts.map((post) => {
+    const slug = getSlugFromFilePath(post.file);
+    return {
+        url: `/${slug}`,
+        frontmatter: post.frontmatter,
+    };
+});
+---
+
+<!doctype html>
+<html>
+    <Header title="Blog | Adam Lee" />
+    <body>
+        <div class="content">
+            <Sidebar selectedItem="blog" />
+            <nav class="main">
+                <div class="container">
+                    <div class="back-nav-container">
+                        <a href="/" class="back-nav-button w-inline-block">
+                            <img
+                                src="/assets/back.svg"
+                                loading="lazy"
+                                alt=""
+                                class="back-nav-img"
+                            />
+                            <div>Back</div>
+                        </a>
+                    </div>
+                    <div class="content-container">
+                        <h1>Blog</h1>
+                        <p class="blog-subtitle">
+                            Thoughts, experiences, and learnings from my journey in tech.
+                        </p>
+                        <BlogList posts={blogPosts} />
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </body>
+</html>
+
+<style>
+    .blog-subtitle {
+        font-size: 1rem;
+        color: #888;
+        line-height: 1.6;
+        margin: 0.5rem 0 1.5rem 0;
+    }
+</style>
+
