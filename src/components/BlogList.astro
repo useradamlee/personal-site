@@ -20,7 +20,7 @@ const sortedPosts = posts.sort((a, b) => {
 <div class="blog-posts">
     {
         sortedPosts.map((post) => {
-            const categoryKey = post.frontmatter.category.toLowerCase();
+            const categoryKey = post.frontmatter.category?.toLowerCase() || "activity";
             const category = categories[categoryKey] || categories.activity;
             const slug = post.url;
 
