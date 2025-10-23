@@ -1,30 +1,30 @@
 [
-    {
-        "title": "Typescript Programming",
-        "platform": "boot.dev",
-        "progress": 75,
-        "icon": "🐹",
-        "description": "Deep-diving into Typescript for backend systems and microservices"
-    },
-    {
-        "title": "Embedded Systems",
-        "platform": "Self-study & SST Electronics",
-        "progress": 60,
-        "icon": "🔌",
-        "description": "Working with microcontrollers, sensors, and real-time systems"
-    },
-    {
-        "title": "Distributed Systems",
-        "platform": "MIT OpenCourseWare",
-        "progress": 40,
-        "icon": "🌐",
-        "description": "Learning consensus algorithms, replication, and fault tolerance"
-    },
-    {
-        "title": "System Design",
-        "platform": "Self-study",
-        "progress": 55,
-        "icon": "🏗️",
-        "description": "Studying scalable architecture patterns and trade-offs"
-    }
+  {
+    "title": "Typescript Programming",
+    "platform": "boot.dev",
+    "progress": 25,
+    "icon": "🐹",
+    "description": "Learning the fundamentals of Typescript"
+  },
+  {
+    "title": "Embedded Systems",
+    "platform": "Self-study & SST Electronics",
+    "progress": 60,
+    "icon": "🔌",
+    "description": "Working with microcontrollers, sensors, and real-time systems"
+  },
+  {
+    "title": "Space communications",
+    "platform": "Web/NASA",
+    "progress": 40,
+    "icon": "🌐",
+    "description": "Learning communication in space, communication between satellites e.t.c."
+  },
+  {
+    "title": "System Design",
+    "platform": "Self-study",
+    "progress": 55,
+    "icon": "🏗️",
+    "description": "Studying scalable architecture patterns and trade-offs"
+  }
 ]

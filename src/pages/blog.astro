@@ -8,9 +8,9 @@ const blogPostModules = import.meta.glob("../data/blog/*.md");
 
 const allPosts = await Promise.all(
     Object.entries(blogPostModules).map(async ([path, loader]) => {
-        const post = await loader();
-        return { ...post, file: path };
-    })
+        const post = (await loader()) as Record<string, any>;
+        return { ...post, file: path } as any;
+    }),
 );
 
 const blogPosts = allPosts.map((post) => {
@@ -44,7 +44,8 @@ const blogPosts = allPosts.map((post) => {
                     <div class="content-container">
                         <h1>Blog</h1>
                         <p class="blog-subtitle">
-                            Thoughts, experiences, and learnings from my journey in tech.
+                            Thoughts, experiences, and learnings from my journey
+                            in tech.
                         </p>
                         <BlogList posts={blogPosts} />
                     </div>
@@ -62,4 +63,3 @@ const blogPosts = allPosts.map((post) => {
         margin: 0.5rem 0 1.5rem 0;
     }
 </style>
-

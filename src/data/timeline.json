@@ -1,26 +1,19 @@
 [
   {
-    "date": "Oct 2024",
-    "category": "course",
-    "title": "Started Advanced Backend Development (boot.dev)",
-    "description": "Enrolled in comprehensive backend engineering track covering Go, system design, and distributed systems.",
-    "tags": ["Go", "Backend", "Learning"]
-  },
-  {
-    "date": "Mar 2024",
-    "category": "competition",
-    "title": "National Cyber League - Spring 2024",
-    "description": "Competed in comprehensive cybersecurity challenges, achieving Top 10% nationally.",
+    "date": "Oct 2025",
+    "category": "School Trip",
+    "title": "SMUA x SST (PC-ITP) Pre-Trip Workshop",
+    "description": "Participated in various workshops by Lectures, covering topics ranging from China's Social Etiquette in Business to an overview of China's History.",
     "highlights": [
-      "Ranked Top 10% out of 5,000+ participants",
-      "Specialized in cryptography and web exploitation",
-      "Solved 45+ security challenges"
+      "Overview of China’s history, culture, and key philosophies.",
+      "Comparison of Chinese and Western etiquette in social and business contexts.",
+      "Exploration of business culture, 关系, and wine culture in China"
     ],
     "tags": ["Cybersecurity", "Top 10%", "NCL"],
-    "detailUrl": "/ncl-spring-2025"
+    "detailUrl": "/PC-ITP-Trip"
   },
   {
-    "date": "2023 - Present",
+    "date": "2024 - Present",
     "category": "achievement",
     "title": "Selected for IDP (Integrated Diploma Programme)",
     "description": "Accepted into SST-NP's Integrated Diploma Programme - a direct pathway from secondary school to Ngee Ann Polytechnic without O-Levels.",
@@ -32,16 +25,11 @@
     "tags": ["SST", "IDP", "Achievement"]
   },
   {
-    "date": "Feb 2023",
-    "category": "competition",
-    "title": "AWS GameDay Competition",
-    "description": "Participated in AWS GameDay, troubleshooting and optimizing cloud infrastructure under time pressure.",
-    "highlights": [
-      "Team placed 3rd out of 20 teams",
-      "Optimized costs by 40%",
-      "Improved system resilience"
-    ],
-    "tags": ["AWS", "Competition", "Team"]
+    "date": "May 2025 - Present",
+    "category": "course",
+    "title": "Started Learning Backend Development (boot.dev)",
+    "description": "Enrolled in comprehensive backend engineering track covering Typescript, system design, and distributed systems.",
+    "tags": ["Typescript", "Backend", "Learning"]
   },
   {
     "date": "2022 - Present",
