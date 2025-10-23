@@ -117,6 +117,10 @@ const { selectedItem } = Astro.props;
             cleanup = setupNav();
         };
 
+        // Initialize immediately on script load
+        initNav();
+
+        // Also handle Astro View Transitions if they're used
         document.addEventListener("astro:page-load", initNav);
         document.addEventListener("astro:before-swap", () => {
             if (cleanup) {
