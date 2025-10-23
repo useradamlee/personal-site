@@ -4,7 +4,14 @@ import Sidebar from "../components/Sidebar.astro";
 import BlogList from "../components/BlogList.astro";
 import { getSlugFromFilePath } from "../utils/blog";
 
-const allPosts = await Astro.glob("../data/blog/*.md");
+const blogPostModules = import.meta.glob("../data/blog/*.md");
+
+const allPosts = await Promise.all(
+    Object.entries(blogPostModules).map(async ([path, loader]) => {
+        const post = await loader();
+        return { ...post, file: path };
+    })
+);
 
 const blogPosts = allPosts.map((post) => {
     const slug = getSlugFromFilePath(post.file);
