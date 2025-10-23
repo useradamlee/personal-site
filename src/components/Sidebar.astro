@@ -73,12 +73,10 @@ const { selectedItem } = Astro.props;
                 class={`nav-link-container w-inline-block ${
                     selectedItem === "blog" ? "w--current" : ""
                 }`}
-                aria-current={selectedItem === "blog"
-                    ? "page"
-                    : undefined}
+                aria-current={selectedItem === "blog" ? "page" : undefined}
             >
                 <img
-                    src="/assets/home.svg"
+                    src="/assets/code.svg"
                     loading="lazy"
                     decoding="async"
                     width="20"
