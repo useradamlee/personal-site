@@ -10,6 +10,7 @@ const { selectedItem } = Astro.props;
     data-easing2="ease"
     role="banner"
     class="sidebar w-nav"
+    transition:persist="sidebar"
 >
     <div class="nav-content">
         <a href="/" class="w-nav-brand" aria-label="home">
@@ -117,16 +118,10 @@ const { selectedItem } = Astro.props;
             cleanup = setupNav();
         };
 
-        // Initialize immediately on script load
+        // Initialize on first load
         initNav();
 
-        // Also handle Astro View Transitions if they're used
-        document.addEventListener("astro:page-load", initNav);
-        document.addEventListener("astro:before-swap", () => {
-            if (cleanup) {
-                cleanup();
-                cleanup = undefined;
-            }
-        });
+        // Re-initialize after view transitions
+        document.addEventListener("astro:after-swap", initNav);
     </script>
 </aside>
